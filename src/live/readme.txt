@@ -1,0 +1,1 @@
+Liveticker für den Wettbewerbstag.

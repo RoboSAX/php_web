@@ -1,0 +1,16 @@
+DirectoryIndex index.php
+
+# hide git files (e.g. ".git")
+RedirectMatch 403 \.git
+
+# hide main-php-file, log-file and html-files
+RedirectMatch 403 content\.inc\.php
+RedirectMatch 403 log.txt
+RedirectMatch 403 html
+
+
+
+### internal shortcuts ###
+# Datenschutz
+Redirect 301 /dsgvo  /?ref=datenschutz
+

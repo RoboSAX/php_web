@@ -1,0 +1,4 @@
+<?php
+    define("TITLE"   ,"Überschrift"    );
+    define("SUBTITLE","Subüberschrift.");
+?>

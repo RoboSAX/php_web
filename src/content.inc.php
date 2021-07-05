@@ -27,7 +27,9 @@ class Content {
         $exploded=explode('/',$path);
         $res=$exploded[count($exploded)-1];
 
-        if (strpos($res,'-')===1) // only support one digit for sorting
+        // allowing one or more digits for sorting
+        // before: if (strpos($res,'-')===1)
+        if (strpos($res,'-') > 0)
             $res=explode('-',$res,2)[1];
 
         $exploded=explode('.',$res);

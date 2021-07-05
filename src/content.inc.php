@@ -8,6 +8,8 @@ class Content {
     function __construct($content_dir) {
         define("INVISIBLE","invisible");
         define("SHRINK","shrink");
+        define("DESCENDING","desc");
+
         $this->content_dir=$content_dir;
     }
 
@@ -173,7 +175,13 @@ class Content {
 
             echo $this->get_file_folder_name($key);//."<br>";
 
-            foreach ($tree["dirs"][$key]["files"] as $value) {
+            // feature of reversing file order
+            $files=$tree["dirs"][$key]["files"];
+            if ($this->hasSuffix($key,DESCENDING)) {
+                $files=array_reverse($files);
+            }
+
+            foreach ($files as $value) {
                 if ($this->hasSuffix($value,INVISIBLE))
                     continue;
 
